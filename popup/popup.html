@@ -2,100 +2,49 @@
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      width: 500px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles/popup.css">
 
-    * {
-      box-sizing: border-box;
-    }
-
-    input[type=text],
-    select,
-    textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      margin-top: 6px;
-      margin-bottom: 16px;
-      resize: vertical;
-    }
-
-    input[type=submit] {
-      background-color: #4CAF50;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    input[type=submit]:hover {
-      background-color: #45a049;
-    }
-
-    .container {
-      border-radius: 5px;
-      background-color: #f2f2f2;
-      padding: 20px;
-    }
-    #radio {
-          margin-top: 6px;
-        display: flex;
-        margin-bottom: 16px;
-          flex-direction: row;
-    }
-    #radio label {
-      text-align: center;
-      margin-right: 10px;
-    }
-  </style>
 </head>
 
 <body>
 
-  <h3>Abset Form</h3>
+    <h3>Abset Form</h3>
 
-  <div class="container">
-    <form action="/action_page.php">
-      <label for="fname">Full Name</label>
-      <input type="text" id="fname" name="firstname" placeholder="Your name..">
-
-      <label for="lname">Day Off</label>
-      <input type="text" id="lname" name="lastname" placeholder="Day">
-      <div id ="radio">
-        <div>
-          <input type="radio" id="sang" name="gender" value="male">
-          <label for="male">Morning</label><br>
-        </div>
-        <div>
-          <input type="radio" id="chieu" name="gender" value="female">
-          <label for="female">Afternoon</label><br>
-        </div>
-        <div>
-          <input type="radio" id="fullday" name="gender" value="other">
-          <label for="other">Full Day</label>
-        </div>
-      </div>
-      <br>
-      <label for="country">Manager</label>
-      <select id="country" name="country">
-        <option value="australia">A Minh</option>
-        <option value="canada">Long Van</option>
-        <option value="usa">Le</option>
-      </select>
-      <label for="subject">Subject</label>
-      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-      <input type="submit" value="Submit">
-    </form>
-  </div>
-
+    <div class="container">
+        <form id="my_form">
+            <label for="fname">Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            <label for="lname">Day Off</label>
+            <input type="text" id="lname" name="lastname" placeholder="Day">
+            <div id="radio">
+                <div>
+                    <input type="radio" id="sang" name="session" value="morning">
+                    <label for="male">Morning</label><br>
+                </div>
+                <div>
+                    <input type="radio" id="chieu" name="session" value="afternoon">
+                    <label for="female">Afternoon</label><br>
+                </div>
+                <div>
+                    <input type="radio" id=" fullday " name="session" value="full_day ">
+                    <label for="other ">Full Day</label>
+                </div>
+            </div>
+            <br>
+            <label for="manager ">Manager</label>
+            <select id="maneger" name="maneger">
+          <option value="MinhTan" selected>A Minh</option>
+          <option value="longvv">Long Van</option>
+          <option value="le">Le</option>
+        </select>
+            <label for="subject">Subject</label>
+            <textarea id="subject " name="subject" placeholder="Write something.." style="height:200px "></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script src="https://apis.google.com/js/client.js?onload=onGAPILoad"></script>
+    <script type="module" src="./popup.js"></script>
 </body>
 
 </html>

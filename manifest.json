@@ -1,15 +1,28 @@
 {
-  "name": "Absent for employees Tomosia",
-  "description": "Build an Extension!",
-  "version": "1.0",
-  "manifest_version": 3,
+    "name": "Absent for employees Tomosia",
+    "description": "Build an Extension!",
+    "version": "1.0",
+    "manifest_version": 3,
     "background": {
-      "service_worker": "service-worker.js"
+        "service_worker": "background.js"
     },
-  "permissions": [
-    "storage"
-  ],
-  "action": { 
-  "default_popup": "popup/popup.html"
+    "host_permissions": [
+        "http://*/"
+    ],
+    "permissions": [
+        "storage", "identity", "cookies", "activeTab"
+    ],
+    "action": {
+        "default_popup": "popup/popup.html"
+    },
+    "oauth2": {
+        "client_id": "947005021816-8dpsbm6icimgo5qujl3ihh92q8jbn11n.apps.googleusercontent.com",
+        "scopes": [
+            "https://www.googleapis.com/auth/gmail.readonly"
+        ]
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' ;script-src-elem 'self' https://apis.google.com; object-src 'none'",
+        "content_scripts": "script-src 'self'; object-src 'none'"
     }
 }
