@@ -60,6 +60,9 @@ function initClient() {
 }
 
 function appendValues() {
+    let spreadsheet = '1KJABE6ZF-0N02lYt2NgD7YRJwer6QB7tNvQZp21Ys6Y';
+    let r = 'members';
+    let valueInput = 'RAW';
     handleClientLoad();
     console.log("test");
     var values = [
@@ -75,9 +78,9 @@ function appendValues() {
         values: values
     };
     gapi.client.sheets.spreadsheets.values.append({
-        spreadsheetId: spreadsheetId,
-        range: range,
-        valueInputOption: valueInputOption,
+        spreadsheetId: spreadsheet,
+        range: r,
+        valueInputOption: valueInput,
         resource: body
     }).then((response) => {
         var result = response.result;
